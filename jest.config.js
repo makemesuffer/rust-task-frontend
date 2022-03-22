@@ -3,6 +3,7 @@ module.exports = {
   coverageDirectory: 'coverage',
   collectCoverageFrom: ['**/*.{ts,tsx}', '!**/*.d.ts', '!**/node_modules/**'],
   testEnvironment: 'jsdom',
+  testMatch: ['<rootDir>/src/**/*.spec.{ts,tsx}', '<rootDir>/src/**/*.test.{ts,tsx}'],
   setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   transform: {

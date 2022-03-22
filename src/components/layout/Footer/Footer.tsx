@@ -41,7 +41,7 @@ const Footer = () => (
         </a>
       </div>
       <div className="divider bg-primary-100 m-0" />
-      <div>{new Date().getFullYear()} - @andrewtheswag</div>
+      <div>{new Date().getFullYear()} - @andrewtheswag </div>
     </div>
   </footer>
 );
