@@ -1,11 +1,15 @@
 module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        title: ['Benzin-Regular', 'Helvetica', 'Arial', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
   plugins: [require('daisyui')],
   daisyui: {
-    themes: ['light'],
+    themes: ['wireframe', 'dark'],
   },
 };

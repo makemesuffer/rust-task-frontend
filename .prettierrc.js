@@ -9,7 +9,7 @@ module.exports = {
     {
       files: '*.{tsx,ts,scss,json,html}',
       options: {
-        tabWidth: 4,
+        tabWidth: 2,
       },
     },
   ],
