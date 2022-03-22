@@ -9,7 +9,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
-    'plugin:jsx-a11y/strict',
+    'next',
   ],
   globals: {
     React: 'readonly',
@@ -22,7 +22,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', 'jsx-a11y', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
     'react-hooks/exhaustive-deps': 'error',
     'no-var': 'error',
@@ -31,6 +31,7 @@ module.exports = {
     radix: 'error',
     'space-before-blocks': 'error',
     'import/prefer-default-export': 'off',
+    'react/prop-types': 'off',
   },
   overrides: [
     {
