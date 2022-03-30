@@ -38,7 +38,7 @@ const DonationsTable: React.FC<IDonationsTable> = () => {
         <tbody>
           {testData.map((donator: any) => {
             return (
-              <tr key={donator.id}>
+              <tr key={donator.rank}>
                 <th>{donator.rank}</th>
                 <th>{donator.address}</th>
                 <th>{donator.amount}</th>

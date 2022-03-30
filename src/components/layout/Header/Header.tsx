@@ -1,7 +1,12 @@
 import { useTheme } from 'next-themes';
+import { useWallet } from '@solana/wallet-adapter-react';
+import { WalletDisconnectButton, WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
 const Header = () => {
+  const { publicKey } = useWallet();
   const { theme, setTheme } = useTheme();
+
+  console.log(publicKey);
 
   const changeTheme = () => {
     theme === 'wireframe' ? setTheme('dark') : setTheme('wireframe');
@@ -29,21 +34,25 @@ const Header = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-2 p-2 gap-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 gap-2 shadow bg-base-300 rounded-box w-52"
           >
-            <a className="btn" onClick={changeTheme}>
+            <button className="btn" onClick={changeTheme}>
               Change Theme
-            </a>
-            <a className="btn btn-primary">Connect Wallet</a>
+            </button>
+            <WalletMultiButton className="w-full">Select Wallet</WalletMultiButton>
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-xl">Donation trash can</a>
       </div>
       <div className="navbar-end gap-2 hidden md:flex">
-        <a className="btn" onClick={changeTheme}>
+        <button className="btn" onClick={changeTheme}>
           Change Theme
-        </a>
-        <a className="btn btn-primary">Connect Wallet</a>
+        </button>
+        {publicKey ? (
+          <WalletDisconnectButton>Disconnect</WalletDisconnectButton>
+        ) : (
+          <WalletMultiButton>Select Wallet</WalletMultiButton>
+        )}
       </div>
     </header>
   );
